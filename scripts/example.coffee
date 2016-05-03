@@ -693,7 +693,7 @@ module.exports = (robot) ->
   robot.hear /(muscle|筋トレ|筋肉)/i, (msg) ->
     msg.send msg.random enterReplies
 
-  cronjob = new cronJob(
+  new cronJob(
     cronTime: "0 0 7 * * *"
     start: true
     timeZone: "Asia/Tokyo"
@@ -701,7 +701,7 @@ module.exports = (robot) ->
       robot.send {room: "#ROOM_NAME"}, '[朝の格言] ' + random enterReplies
     )
 
-  cronjob = new cronJob(
+  new cronJob(
     cronTime: "0 0 12 * * *"
     start: true 
     timeZone: "Asia/Tokyo"
@@ -709,7 +709,7 @@ module.exports = (robot) ->
       robot.send {room: "#ROOM_NAME"}, '[お昼の格言] ' + random enterReplies
     )
 
-  cronjob = new cronJob(
+  new cronJob(
     cronTime: "0 0 20 * * *"
     start: true 
     timeZone: "Asia/Tokyo"
